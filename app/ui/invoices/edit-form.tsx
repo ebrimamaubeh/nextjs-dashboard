@@ -20,10 +20,15 @@ export default function EditInvoiceForm({
   customers: CustomerField[];
 }) {
 
+  //  I was getting type erroro with this; So I added the code below: 
+  // : (formData: FormData) => Promise<{ message: string; }> =
+  // scripts working locally, but not on server. fix this later. thesis for now.
+
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
 
   return (
-    <form action={updateInvoiceWithId}>
+    // <form action={updateInvoiceWithId}> // this is showing an error when I call the above variable.
+    <form>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
